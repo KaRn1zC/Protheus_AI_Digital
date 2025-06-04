@@ -26,6 +26,49 @@
 ├── scripts/                     # Scripts Python utilitaires, launchers de pipeline, notebooks de debug, etc.
 ```
 
+## Télécharger les modèles CoreML SAM2-small pour MacOS
+
+**Installer `huggingface-cli` :**
+
+`brew install huggingface-cli`
+
+**Utilise la commande suivante pour télécharger tous les fichiers nécessaires directement dans ton dossier `models/sam2-small-coreml` :**
+
+`huggingface-cli download --local-dir models/sam2-small-coreml coreml-projects/coreml-sam2-small`
+
+**Organise ton dossier ainsi :**
+
+```bash
+models/
+├── sam2-small-coreml/
+│   ├── SAM2_1SmallImageEncoderFLOAT16.mlpackage
+│   ├── SAM2_1SmallPromptEncoderFLOAT16.mlpackage
+│   └── SAM2_1SmallMaskDecoderFLOAT16.mlpackage
+```
+
+## Télécharger et installer LightGlue + SuperPoint
+
+**Executer ceci :**
+
+```bash
+git clone https://github.com/cvg/LightGlue.git
+cd LightGlue
+python -m pip install -e .
+cd ..
+```
+
+**Télécharger le modèle adapté à ONNX pour une utilisation optimisée Apple Silicon :**
+
+`https://github.com/fabio-sim/LightGlue-ONNX/releases/download/v2.0/superpoint_lightglue_pipeline.onnx`
+
+**Place le fichier ainsi dans ton projet :**
+
+```bash
+models/
+└── lightglue_superpoint/
+    └── superpoint_lightglue_pipeline.onnx
+```
+
 
 
 
