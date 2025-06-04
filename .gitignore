@@ -9,3 +9,8 @@ __pycache__/
 *.pth
 *.onnx
 LightGlue/
+*.jpeg
+*.jpg
+*.png
+*.tif
+*.tiff
