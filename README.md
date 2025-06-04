@@ -69,6 +69,28 @@ models/
     └── superpoint_lightglue_pipeline.onnx
 ```
 
+## Utilisation de loguru dans un script de campagne
+
+```python
+from config.loguru_config import setup_loguru
+
+logger = setup_loguru("data/campagne_1")
+logger.info("Démarrage du pipeline pour campagne 1.")
+```
+
+## Utilisation de mlflow dans un script de campagne
+
+```python
+from config.mlflow_config import setup_mlflow
+import mlflow
+
+setup_mlflow("data/campagne_1")
+with mlflow.start_run(run_name="run_001"):
+    mlflow.log_param("param1", 42)
+    mlflow.log_metric("accuracy", 0.98)
+    # etc.
+```
+
 
 
 
